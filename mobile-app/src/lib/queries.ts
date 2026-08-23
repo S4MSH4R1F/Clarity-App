@@ -1,6 +1,6 @@
 import { supabase } from './supabase';
 
-// 1. Fetch 5 most recent bills (for "Top Bills" section)
+//Fetch 5 most recent bills (for "Top Bills" section)
 export async function getRecentBills() {
   const { data, error } = await supabase
     .from('bills')
@@ -16,7 +16,7 @@ export async function getRecentBills() {
   return data;
 }
 
-// 2. Fetch MPP by riding name (for "Your MPP" card)
+//Fetch MPP by riding name (for "Your MPP" card)
 export async function getMPPByRiding(riding: string) {
   const { data, error } = await supabase
     .from('mpps')
@@ -32,7 +32,7 @@ export async function getMPPByRiding(riding: string) {
   return data;
 }
 
-// 3. Fetch articles by city (for "News & Bills" section)
+// Fetch articles by city (for "News & Bills" section)
 export async function getArticlesByCity(city: string) {
   const { data, error } = await supabase
     .from('articles')
